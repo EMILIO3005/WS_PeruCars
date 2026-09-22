@@ -61,7 +61,7 @@ app.put('/vehiculos/:id', (require, result) =>{
   //Paso 2: Obtener los datos
   const { marca, categoria, modelo, anio_fabricacion, precio} = require.body;
   //Construir la consulta
-  const sql = `UPDATE Alumnos SET 
+  const sql = `UPDATE vehiculos SET 
     marca = ?,
     categoria = ?, 
     modelo = ?,
@@ -108,7 +108,7 @@ app.get('/vehiculos/:id', (require, result) => {
 //Ruta queda = http://localhost:3000/vehiculos/1
 app.delete('/vehiculos/:id', (require, result) =>{
   const {id} = require.params;
-  const sql = 'DELETE FROM alumnos WHERE id = ?';
+  const sql = 'DELETE FROM vehiculos WHERE id = ?';
 
 
   db.query(sql, [id], (err, res) =>{
